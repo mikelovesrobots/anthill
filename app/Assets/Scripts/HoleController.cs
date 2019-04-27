@@ -6,6 +6,11 @@ public class HoleController : MonoBehaviour
 {
   public void OnTriggerEnter2D(Collider2D other)
   {
-    Debug.Log("Hit");
+    var ballController = other.transform.root.GetComponent<BallController>();
+    if (!ballController)
+    {
+      return;
+    }
+    ballController.Swallow();
   }
 }

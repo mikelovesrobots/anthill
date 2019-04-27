@@ -14,6 +14,11 @@ public class HoleController : MonoBehaviour
     TextMeshPro.text = number.ToString();
   }
 
+  public void Reset()
+  {
+    StateMachine.ChangeState("_Default");
+  }
+
   public void Highlight()
   {
     StateMachine.ChangeState("_Highlighted");

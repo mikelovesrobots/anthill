@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9112043037747145834}
   - component: {fileID: 691638937211977859}
   - component: {fileID: 4645011380960039721}
-  m_Layer: 0
-  m_Name: BuoyancyEffector
+  m_Layer: 8
+  m_Name: LeverEffector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AxisName: VerticalLeft
   MinBounds: -5
-  MaxBounds: 5
+  MaxBounds: 4
   Speed: 5
   Rigidbody2D: {fileID: 4645011380960039721}
 --- !u!50 &4645011380960039721

@@ -18,4 +18,10 @@ public class HoleController : MonoBehaviour
   {
     StateMachine.ChangeState("_Highlighted");
   }
+
+  public void Swallow()
+  {
+    StateMachine.ChangeState("_Default");
+    TextMeshPro.text = "";
+  }
 }

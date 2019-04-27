@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HoleCollisionController : MonoBehaviour
 {
+  public HoleController HoleController;
+
   public void OnTriggerEnter2D(Collider2D other)
   {
     var ballController = other.transform.root.GetComponent<BallController>();
@@ -11,6 +13,7 @@ public class HoleCollisionController : MonoBehaviour
     {
       return;
     }
+    HoleController.Swallow();
     ballController.Swallow();
   }
 }

@@ -10,7 +10,7 @@ public class RespawnController : MonoBehaviour
 
   private void Start()
   {
-    EventHub.Instance.OnBallSwallowed += Respawn;
+    EventHub.Instance.OnResetRequested += Respawn;
   }
 
   public void Respawn()
@@ -33,5 +33,7 @@ public class RespawnController : MonoBehaviour
     {
       leverLiftController.Ready();
     }
+
+    EventHub.Instance.BallSpawned();
   }
 }

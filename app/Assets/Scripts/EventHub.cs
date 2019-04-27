@@ -6,7 +6,9 @@ public class EventHub : MonoBehaviour
 {
   public static EventHub Instance;
   public delegate void GenericEvent();
+  public GenericEvent OnResetRequested;
   public GenericEvent OnBallSwallowed;
+  public GenericEvent OnBallSpawned;
 
   void Awake()
   {
@@ -15,6 +17,19 @@ public class EventHub : MonoBehaviour
 
   public void BallSwallowed()
   {
-    OnBallSwallowed();
+    if (OnBallSwallowed != null)
+      OnBallSwallowed();
+  }
+
+  public void BallSpawned()
+  {
+    if (OnBallSpawned != null)
+      OnBallSpawned();
+  }
+
+  public void ResetRequested()
+  {
+    if (OnResetRequested != null)
+      OnResetRequested();
   }
 }

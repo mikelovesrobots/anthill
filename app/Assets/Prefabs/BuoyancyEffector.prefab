@@ -64,7 +64,7 @@ MonoBehaviour:
   AxisName: VerticalLeft
   MinBounds: -5
   MaxBounds: 5
-  Speed: 2
+  Speed: 5
   Rigidbody2D: {fileID: 4645011380960039721}
 --- !u!50 &4645011380960039721
 Rigidbody2D:

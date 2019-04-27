@@ -5,7 +5,7 @@ using UnityEngine;
 public class EventHub : MonoBehaviour
 {
   public static EventHub Instance;
-  public LeverLiftController[] LeverLiftControllers;
+  public RespawnController RespawnController;
 
   void Awake()
   {
@@ -14,9 +14,6 @@ public class EventHub : MonoBehaviour
 
   public void BallSwallowed()
   {
-    foreach (var leverLiftController in LeverLiftControllers)
-    {
-      leverLiftController.Reset();
-    }
+    RespawnController.Respawn();
   }
 }

@@ -6,8 +6,9 @@ public class EventHub : MonoBehaviour
 {
   public static EventHub Instance;
   public delegate void GenericEvent();
+  public delegate void BoolEvent(bool isHighlighted);
   public GenericEvent OnResetRequested;
-  public GenericEvent OnBallSwallowed;
+  public BoolEvent OnBallSwallowed;
   public GenericEvent OnBallSpawned;
 
   void Awake()
@@ -15,10 +16,10 @@ public class EventHub : MonoBehaviour
     Instance = this;
   }
 
-  public void BallSwallowed()
+  public void BallSwallowed(bool isHighlighted)
   {
     if (OnBallSwallowed != null)
-      OnBallSwallowed();
+      OnBallSwallowed(isHighlighted);
   }
 
   public void BallSpawned()

@@ -24,9 +24,11 @@ public class HoleController : MonoBehaviour
     StateMachine.ChangeState("_Highlighted");
   }
 
-  public void Swallow()
+  public void Swallow(BallController ballController)
   {
-    StateMachine.ChangeState("_Default");
-    TextMeshPro.text = "";
+    ballController.Swallow();
+    EventHub.Instance.BallSwallowed(IsHighlighted);
   }
+
+  private bool IsHighlighted => StateMachine.currentState.name == "_Highlighted";
 }

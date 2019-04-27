@@ -9,7 +9,6 @@ public class BallController : MonoBehaviour
 
   public void Swallow()
   {
-    EventHub.Instance.BallSwallowed();
     StateMachine.ChangeState("_Swallowed");
   }
 }

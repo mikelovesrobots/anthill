@@ -13,7 +13,6 @@ public class HoleCollisionController : MonoBehaviour
     {
       return;
     }
-    HoleController.Swallow();
-    ballController.Swallow();
+    HoleController.Swallow(ballController);
   }
 }

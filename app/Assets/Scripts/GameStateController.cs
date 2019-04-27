@@ -37,9 +37,12 @@ public class GameStateController : MonoBehaviour
     EventHub.Instance.ResetRequested();
   }
 
-  void OnBallSwallowed()
+  void OnBallSwallowed(bool isHighlighted)
   {
-    currentRound += 1;
+    if (isHighlighted)
+    {
+      currentRound += 1;
+    }
     ResetRound();
   }
 }

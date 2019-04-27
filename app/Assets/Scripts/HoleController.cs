@@ -11,6 +11,7 @@ public class HoleController : MonoBehaviour
     {
       return;
     }
+    EventHub.Instance.BallSwallowed();
     ballController.Swallow();
   }
 }

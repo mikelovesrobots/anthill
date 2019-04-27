@@ -61,11 +61,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0704e0d56b7304eb68a8fc0e87720c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AxisName: VerticalLeft
+  AxisName: VerticalRight
   MinBounds: -5
   MaxBounds: 4
   Speed: 5
   Rigidbody2D: {fileID: 4645011380960039721}
+  ResetAnimationTime: 2.5
+  IsLive: 1
 --- !u!50 &4645011380960039721
 Rigidbody2D:
   serializedVersion: 4

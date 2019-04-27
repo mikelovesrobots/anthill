@@ -5,7 +5,8 @@ using UnityEngine;
 public class EventHub : MonoBehaviour
 {
   public static EventHub Instance;
-  public RespawnController RespawnController;
+  public delegate void GenericEvent();
+  public GenericEvent OnBallSwallowed;
 
   void Awake()
   {
@@ -14,6 +15,6 @@ public class EventHub : MonoBehaviour
 
   public void BallSwallowed()
   {
-    RespawnController.Respawn();
+    OnBallSwallowed();
   }
 }

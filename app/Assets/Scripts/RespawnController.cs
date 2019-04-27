@@ -8,6 +8,11 @@ public class RespawnController : MonoBehaviour
   public float DropDelay = 3.0f;
   public BallFactory BallFactory;
 
+  private void Start()
+  {
+    EventHub.Instance.OnBallSwallowed += Respawn;
+  }
+
   public void Respawn()
   {
     foreach (var leverLiftController in LeverLiftControllers)

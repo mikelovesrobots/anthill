@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pixelplacement;
+using TMPro;
 
 public class HoleController : MonoBehaviour
 {
   public StateMachine StateMachine;
+  public TextMeshPro TextMeshPro;
+
+  public void SetHoleNumber(int number)
+  {
+    TextMeshPro.text = number.ToString();
+  }
 
   public void Highlight()
   {

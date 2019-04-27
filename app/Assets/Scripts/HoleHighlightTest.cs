@@ -8,6 +8,7 @@ public class HoleHighlightTest : MonoBehaviour
 
   void Start()
   {
+    HoleController.SetHoleNumber(4);
     HoleController.Highlight();
   }
 }

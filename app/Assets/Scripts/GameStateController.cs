@@ -12,15 +12,22 @@ public class GameStateController : MonoBehaviour
   private int currentRound = 0;
   private int currentHeartIndex = 0;
 
-  void Start()
+  void OnEnable()
   {
     EventHub.Instance.OnBallSwallowed += OnBallSwallowed;
     StartCoroutine(WaitForEndOfFrameThenStartGame());
   }
 
+  void OnDisable()
+  {
+    EventHub.Instance.OnBallSwallowed -= OnBallSwallowed;
+  }
+
   IEnumerator WaitForEndOfFrameThenStartGame()
   {
     yield return new WaitForEndOfFrame();
+    currentRound = 0;
+    currentHeartIndex = 0;
     ResetRound();
   }
 

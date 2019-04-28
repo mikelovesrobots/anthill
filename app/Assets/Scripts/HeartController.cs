@@ -7,7 +7,7 @@ public class HeartController : MonoBehaviour
 {
   public StateMachine StateMachine;
 
-  void Remove()
+  public void Remove()
   {
     StateMachine.ChangeState("_Removing");
   }

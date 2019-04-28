@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameStateController : MonoBehaviour
 {
   public HoleController[] HoleControllers;
+  public HeartController[] HeartControllers;
   private int currentRound = 0;
+  private int currentHeartIndex = 0;
 
   void Start()
   {
@@ -43,6 +45,16 @@ public class GameStateController : MonoBehaviour
     {
       currentRound += 1;
     }
+    else
+    {
+      HeartControllers[currentHeartIndex].Remove();
+      currentHeartIndex += 1;
+      if (IsDead)
+      {
+        Debug.Log("Oh, you're fucked");
+      }
+    }
     ResetRound();
   }
+  private bool IsDead => currentHeartIndex >= HeartControllers.Length;
 }

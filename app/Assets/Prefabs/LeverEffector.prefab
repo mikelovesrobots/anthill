@@ -273,7 +273,7 @@ MonoBehaviour:
   AxisName: VerticalLeft
   LeverLiftController: {fileID: 691638937211977859}
   MinBounds: -4
-  MaxBounds: 4
+  MaxBounds: 3.2
 --- !u!1 &8111053856201178200
 GameObject:
   m_ObjectHideFlags: 0

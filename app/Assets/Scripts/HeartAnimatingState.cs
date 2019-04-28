@@ -4,7 +4,7 @@ using UnityEngine;
 using Pixelplacement;
 using UnityEngine.UI;
 
-public class HeartRemovingState : State
+public class HeartAnimatingState : State
 {
   public Image[] Images;
   public Color DesiredColor;
@@ -16,12 +16,7 @@ public class HeartRemovingState : State
   {
     foreach (var image in Images)
     {
-      Tween.Color(image, image.color, DesiredColor, AnimationTime, 0f, AnimationCurve, Tween.LoopType.None, null, OnCompleteCallback);
+      Tween.Color(image, image.color, DesiredColor, AnimationTime, 0f, AnimationCurve, Tween.LoopType.None);
     }
-  }
-
-  void OnCompleteCallback()
-  {
-    Destroy(Root);
   }
 }

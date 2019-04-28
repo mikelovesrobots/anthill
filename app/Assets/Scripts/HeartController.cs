@@ -7,8 +7,13 @@ public class HeartController : MonoBehaviour
 {
   public StateMachine StateMachine;
 
-  public void Remove()
+  public void Show()
   {
-    StateMachine.ChangeState("_Removing");
+    StateMachine.ChangeState("_Showing");
+  }
+
+  public void Hide()
+  {
+    StateMachine.ChangeState("_Hiding");
   }
 }

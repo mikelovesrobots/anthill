@@ -28,6 +28,11 @@ public class GameStateController : MonoBehaviour
     yield return new WaitForEndOfFrame();
     currentRound = 0;
     currentHeartIndex = 0;
+    foreach (var heart in HeartControllers)
+    {
+      heart.Show();
+    }
+
     ResetRound();
   }
 
@@ -65,7 +70,7 @@ public class GameStateController : MonoBehaviour
     }
     else
     {
-      HeartControllers[currentHeartIndex].Remove();
+      HeartControllers[currentHeartIndex].Hide();
       currentHeartIndex += 1;
       if (IsDead)
       {

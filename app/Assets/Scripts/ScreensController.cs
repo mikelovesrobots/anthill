@@ -26,11 +26,11 @@ public class ScreensController : MonoBehaviour
     {
       if (screen.gameObject.name == name)
       {
-        Tween.LocalPosition(screen, OnscreenPosition, AnimationTime, 0f, AnimationCurve);
+        Tween.LocalPosition(screen, OnscreenPosition, AnimationTime, AnimationTime, AnimationCurve);
       }
       else
       {
-        Tween.LocalPosition(screen, OffscreenPosition, AnimationTime, AnimationTime, AnimationCurve);
+        Tween.LocalPosition(screen, OffscreenPosition, AnimationTime, 0f, AnimationCurve);
       }
     }
   }

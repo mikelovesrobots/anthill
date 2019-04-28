@@ -6,6 +6,8 @@ public class GameStateController : MonoBehaviour
 {
   public HoleController[] HoleControllers;
   public HeartController[] HeartControllers;
+  public SceneChanger WinSceneChanger;
+  public SceneChanger RetrySceneChanger;
   private int currentRound = 0;
   private int currentHeartIndex = 0;
 
@@ -44,6 +46,10 @@ public class GameStateController : MonoBehaviour
     if (isHighlighted)
     {
       currentRound += 1;
+      if (HasWon)
+      {
+        WinSceneChanger.ChangeScene();
+      }
     }
     else
     {
@@ -51,10 +57,11 @@ public class GameStateController : MonoBehaviour
       currentHeartIndex += 1;
       if (IsDead)
       {
-        Debug.Log("Oh, you're fucked");
+        RetrySceneChanger.ChangeScene();
       }
     }
     ResetRound();
   }
   private bool IsDead => currentHeartIndex >= HeartControllers.Length;
+  private bool HasWon => currentRound >= HoleControllers.Length;
 }

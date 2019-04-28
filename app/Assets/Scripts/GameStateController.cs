@@ -6,8 +6,8 @@ public class GameStateController : MonoBehaviour
 {
   public HoleController[] HoleControllers;
   public HeartController[] HeartControllers;
-  public SceneChanger WinSceneChanger;
-  public SceneChanger RetrySceneChanger;
+  public StateMachineChanger WinScreenChanger;
+  public StateMachineChanger LoseScreenChanger;
   public float DwellTimeBeforeChangingScenes = 1.5f;
   private int currentRound = 0;
   private int currentHeartIndex = 0;
@@ -49,7 +49,7 @@ public class GameStateController : MonoBehaviour
       currentRound += 1;
       if (HasWon)
       {
-        StartCoroutine(WaitThenChangeScene(WinSceneChanger));
+        StartCoroutine(WaitThenChangeScene(WinScreenChanger));
       }
       else
       {
@@ -62,7 +62,7 @@ public class GameStateController : MonoBehaviour
       currentHeartIndex += 1;
       if (IsDead)
       {
-        StartCoroutine(WaitThenChangeScene(RetrySceneChanger));
+        StartCoroutine(WaitThenChangeScene(LoseScreenChanger));
       }
       else
       {
@@ -71,10 +71,10 @@ public class GameStateController : MonoBehaviour
     }
   }
 
-  IEnumerator WaitThenChangeScene(SceneChanger sceneChanger)
+  IEnumerator WaitThenChangeScene(StateMachineChanger sceneChanger)
   {
     yield return new WaitForSeconds(DwellTimeBeforeChangingScenes);
-    sceneChanger.ChangeScene();
+    sceneChanger.Change();
   }
   private bool IsDead => currentHeartIndex >= HeartControllers.Length;
   private bool HasWon => currentRound >= HoleControllers.Length;

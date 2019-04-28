@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 1253936785993015360}
   - component: {fileID: 2520270456421097407}
   m_Layer: 9
-  m_Name: _Swallowed
+  m_Name: _Swallowing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,6 +90,7 @@ MonoBehaviour:
   Root: {fileID: 6874708982492936625}
   RendererTarget: {fileID: 6874708981935212205}
   ScaleTime: 0.3
+  LeverAvoidingLayer: 0
 --- !u!1 &6874708981935212202
 GameObject:
   m_ObjectHideFlags: 0

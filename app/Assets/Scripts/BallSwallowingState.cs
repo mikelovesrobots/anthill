@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pixelplacement;
 
-public class BallSwallowedState : State
+public class BallSwallowingState : State
 {
   public Rigidbody2D Rigidbody2D;
   public Transform Root;

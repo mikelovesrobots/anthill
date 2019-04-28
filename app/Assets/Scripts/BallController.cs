@@ -9,6 +9,6 @@ public class BallController : MonoBehaviour
 
   public void Swallow()
   {
-    StateMachine.ChangeState("_Swallowed");
+    StateMachine.ChangeState("_Swallowing");
   }
 }

@@ -12,7 +12,6 @@ public class HoleResizeAction : ActionBase
 
   public override void Act()
   {
-    Debug.Log("Ran!");
     Tween.LocalScale(Root, Vector3.one * TargetSize, AnimationTime, 0, AnimationCurve);
   }
 }

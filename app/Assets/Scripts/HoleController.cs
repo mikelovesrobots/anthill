@@ -16,7 +16,8 @@ public class HoleController : MonoBehaviour
 
   public void Reset()
   {
-    StateMachine.ChangeState("_Default");
+    if (IsHighlighted)
+      StateMachine.ChangeState("_Default");
   }
 
   public void Highlight()
@@ -26,6 +27,10 @@ public class HoleController : MonoBehaviour
 
   public void Swallow(BallController ballController)
   {
+    if (!IsHighlighted)
+    {
+      StateMachine.ChangeState("_Shrinking");
+    }
     ballController.Swallow(transform);
     EventHub.Instance.BallSwallowed(IsHighlighted);
   }

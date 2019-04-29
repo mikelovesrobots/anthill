@@ -26,7 +26,7 @@ public class HoleController : MonoBehaviour
 
   public void Swallow(BallController ballController)
   {
-    ballController.Swallow();
+    ballController.Swallow(transform);
     EventHub.Instance.BallSwallowed(IsHighlighted);
   }
 
